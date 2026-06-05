@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--background_general);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}

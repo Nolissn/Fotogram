@@ -1,0 +1,18 @@
+h1{
+    font-family: "Figtree";
+    font-weight: 800;
+    font-size: 56px;
+    color: white;
+}
+
+header{
+    background-color: var(--background_secondary);
+    height: 81px;
+    margin: 0 0 160px 0;
+}
+
+.header_icon{
+    width: 215.19px;
+    height: 41px;
+    margin: 20px 0 0 128px;
+}

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Figtree";
+  font-weight: 800; /*ExtraBold*/
+  src:
+    url(../assets/fonts/Figtree/woff2/figtree-variablefont_wght-webfont.woff2)
+      format("woff2"),
+    url(../assets/fonts/Figtree/woff/figtree-variablefont_wght-webfont.woff)
+      format("woff");
+}

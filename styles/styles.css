@@ -2,12 +2,32 @@ header {
   background-color: var(--background_secondary);
   height: 81px;
   margin: 0 0 160px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .header_icon {
   width: 215.19px;
   height: 41px;
-  margin: 20px 0 0 128px;
+  /* Margin skaliert flüssig und unbegrenzt mit der Bildschirmbreite:
+       140px      = Untergrenze, darunter wird die Margin nie kleiner (max() fängt das Schrumpfen ab)
+       140px      = Startwert bei 1440px Breite
+       100vw      = aktuelle Bildschirmbreite
+       1440px     = Breite, ab der die Margin zu wachsen beginnt
+       100 / 480  = Steigung: 100px Zuwachs pro 480px Breite (480 = Bezugsfenster 1920-1440)
+     Eckwerte: 1440px→140px, 1920px→240px, 2880px→440px, ... (kein oberes Limit) */
+  margin-left: max(140px, calc(140px + (100vw - 1440px) * 100 / 480));
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  flex: 1;
+  overflow: hidden;
 }
 
 footer {

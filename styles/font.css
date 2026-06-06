@@ -7,6 +7,13 @@
     url(../assets/fonts/Figtree/Figtree-VariableFont_wght.woff) format("woff");
 }
 
+h1 {
+  font-family: "Figtree";
+  font-weight: 800;
+  font-size: 56px;
+  color: white;
+}
+
 .footer_text{
   font-family: "Figtree";
   font-weight: 400;

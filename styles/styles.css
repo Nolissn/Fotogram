@@ -30,10 +30,40 @@ main {
   overflow: hidden;
 }
 
-.foto_section{
+.picture_section{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.pictures_div_row_one{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 80px;
+}
+
+.pictures_div_row_two{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.thumbnail_div{
+  width: 150px;
+  height: 150px;
+  border-radius: 16px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--thumbnail_border_color);
+  overflow: hidden;
+}
+
+.thumbnail_imgage{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 footer {
@@ -50,4 +80,10 @@ footer {
 footer img {
   width: 133.28px;
   height: 32px;
+}
+
+@media (min-width: 1440px) {
+  .pictures_div_row_one {
+    margin-top: 160px;
+  }
 }

@@ -22,7 +22,7 @@ function addfirstrow() {
 
 function getFirstRowTemplate(index)
 {
-  return `<div class="thumbnail_div">
+  return `<div class="thumbnail_div" onclick="openDialog()">
         <img src="./assets/pictures/${pictures[index]}" alt="thumbnail" class="thumbnail_imgage">
     </div>`;
 }
@@ -36,9 +36,14 @@ function addsecondrow() {
 
 function getSecondRowTemplate(index)
 {
-  return `<div class="thumbnail_div">
+  return `<div class="thumbnail_div" onclick="openDialog()">
         <img src="./assets/pictures/${pictures[index]}" alt="thumbnail" class="thumbnail_imgage">
     </div>`;
+}
+
+function openDialog(){
+  let dialog = document.getElementById("dialogID");
+  dialog.showModal();
 }
 
 addfirstrow();

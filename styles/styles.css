@@ -27,7 +27,7 @@ main {
   max-width: 1440px;
   margin: 0 auto;
   flex: 1;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .picture_section{
@@ -80,6 +80,63 @@ footer {
 footer img {
   width: 133.28px;
   height: 32px;
+}
+
+.thumbnail_div:hover{
+   border-color: var(--thumbnail_border_color_active);
+   transform: scale(1.04);
+}
+
+dialog[open]{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  background-color: var(--background_secondary);
+  border-radius: 16px;
+  border-color: var(--background_secondary);
+  width: 688px;
+  height: 674.71px;
+}
+
+.dialog_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 560px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+dialog > img
+{
+  width: 560px;
+  height: 380px;
+  object-fit: cover;
+}
+
+.dialog_footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 261px;
+  margin-top: 48px;
+}
+
+dialog button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--dialog_button_background);
+  cursor: pointer;
+}
+
+dialog:focus{
+  outline: none;
 }
 
 @media (min-width: 1440px) {

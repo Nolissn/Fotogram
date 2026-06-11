@@ -46,6 +46,18 @@ function openDialog(index) {
   document.getElementById("dialogID").showModal();
 }
 
+function dialogClickedOutside(event) {
+  let rect = event.currentTarget.getBoundingClientRect();
+  let clickedInside =
+    event.clientX >= rect.left &&
+    event.clientX <= rect.right &&
+    event.clientY >= rect.top &&
+    event.clientY <= rect.bottom;
+  if (!clickedInside) {
+    closeDialog();
+  }
+}
+
 function showPicture(index) {
   currentIndex = index;
   document.getElementById("dialog_image").src =

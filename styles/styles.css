@@ -131,8 +131,35 @@ dialog button{
   height: 60px;
   border: none;
   border-radius: 50%;
-  background-color: var(--dialog_button_background);
+  background-color: var(--dialog_direction_button_background);
   cursor: pointer;
+}
+
+.dialog_footer button:active{
+  background-color: var(--dialog_direction_button_active);
+}
+
+.close_dialog_x_button{
+  border-radius: 50%;
+  background-color: var(--background_secondary);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close_dialog_x_button:hover{
+  background-color: var(--dialog_x_button_hover);
+}
+
+.close_dialog_x_button:active{
+  background-color: var(--dialog_x_button_active);
+}
+
+.close_dialog_x_button img{
+  width: 13.15px;
+  height: 13.15px;
 }
 
 dialog:focus{

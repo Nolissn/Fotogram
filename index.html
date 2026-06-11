@@ -65,14 +65,26 @@
     </footer>
     <dialog id="dialogID">
       <div class="dialog_header">
-        <span class="dialog_header_text">Lorem</span>
-          <img src="./assets/svg/close_x_button.svg" alt="Close Button"/>
+        <span class="dialog_header_text" id="dialog_header_text_id">Lorem</span>
+        <button class="close_dialog_x_button" onclick="closeDialog()">
+          <img src="./assets/svg/close_x_button.svg" alt="Close Button" />
+        </button>
       </div>
-      <img src="./assets/pictures/black_hole.webp" alt="Selected Picture">
+      <img
+        id="dialog_image"
+        src="./assets/pictures/black_hole.webp"
+        alt="Selected Picture"
+      />
       <div class="dialog_footer">
-        <button><img src="./assets/svg/arrow-left.svg" alt="Left Arrow Icon"></button>
-        <p class="dialog_footer_text"><span class="dialog_footer_text">1</span>/12</p>
-        <button><img src="./assets/svg/arrow-right.svg" alt="Right Arrow Icon"></button>
+        <button onclick="directionLeft()">
+          <img src="./assets/svg/arrow-left.svg" alt="Left Arrow Icon" />
+        </button>
+        <p class="dialog_footer_text">
+          <span id="dialog_counter" class="dialog_footer_text">1</span>/12
+        </p>
+        <button onclick="directionRight()">
+          <img src="./assets/svg/arrow-right.svg" alt="Right Arrow Icon" />
+        </button>
       </div>
     </dialog>
     <script src="./scripts/script.js"></script>

@@ -1,7 +1,7 @@
 header {
   background-color: var(--background_secondary);
   height: 81px;
-  margin: 0 0 160px 0;
+  margin-bottom: 160px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,13 +10,16 @@ header {
 .header_icon {
   width: 215.19px;
   height: 41px;
-  /* Margin skaliert flüssig und unbegrenzt mit der Bildschirmbreite:
-       140px      = Untergrenze, darunter wird die Margin nie kleiner (max() fängt das Schrumpfen ab)
-       140px      = Startwert bei 1440px Breite
-       100vw      = aktuelle Bildschirmbreite
-       1440px     = Breite, ab der die Margin zu wachsen beginnt
-       100 / 480  = Steigung: 100px Zuwachs pro 480px Breite (480 = Bezugsfenster 1920-1440)
-     Eckwerte: 1440px→140px, 1920px→240px, 2880px→440px, ... (kein oberes Limit) */
+  /* Ziel: Bis 1440px bleibt der Abstand fix bei 140px. Ab 1440px wächst er linear
+     und erreicht bei 1920px genau 240px (+100px über 480px Breitenzuwachs). Darüber
+     hinaus läuft dieselbe Gerade nahtlos weiter (kein Knick, kein oberes Limit).
+
+     Eine lineare Funktion: margin = Start + (aktuelle Breite - Schwelle) * Steigung
+       max(140px, ...) = Untergrenze, fängt unterhalb 1440px das Schrumpfen ab
+       140px           = Startwert bei 1440px
+       (100vw - 1440px)= zurückgelegte Breite ab der Schwelle
+       100 / 480       = Steigung: +100px je 480px Breite (= 1/4.8)
+     Eckwerte: 1440px→140px, 1920px→240px, 2880px→440px */
   margin-left: max(140px, calc(140px + (100vw - 1440px) * 100 / 480));
 }
 
@@ -28,29 +31,19 @@ main {
   margin: 0 auto;
   flex: 1;
   overflow: visible;
+  padding: 0 24px; /*Puffer für früheren Umbruch um Bug zu vermeiden*/
 }
 
-.picture_section{
+.picture_section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.pictures_div_row_one{
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px 16px;
+  max-width: 1190px;
   margin-top: 80px;
 }
 
-.pictures_div_row_two{
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  margin-top: 48px;
-}
-
-.thumbnail_div{
+.thumbnail_div {
   width: 150px;
   height: 150px;
   border-radius: 16px;
@@ -60,7 +53,7 @@ main {
   overflow: hidden;
 }
 
-.thumbnail_imgage{
+.thumbnail_imgage {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -83,12 +76,12 @@ footer img {
   height: 32px;
 }
 
-.thumbnail_div:hover{
-   border-color: var(--thumbnail_border_color_active);
-   transform: scale(1.04);
+.thumbnail_div:hover {
+  border-color: var(--thumbnail_border_color_active);
+  transform: scale(1.04);
 }
 
-dialog[open]{
+dialog[open] {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,7 +93,7 @@ dialog[open]{
   height: 674.71px;
 }
 
-.dialog_header{
+.dialog_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -109,14 +102,13 @@ dialog[open]{
   margin-bottom: 48px;
 }
 
-dialog > img
-{
+dialog > img {
   width: 560px;
   height: 380px;
   object-fit: cover;
 }
 
-.dialog_footer{
+.dialog_footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -124,7 +116,7 @@ dialog > img
   margin-top: 48px;
 }
 
-dialog button{
+dialog button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,11 +128,11 @@ dialog button{
   cursor: pointer;
 }
 
-.dialog_footer button:active{
+.dialog_footer button:active {
   background-color: var(--dialog_direction_button_active);
 }
 
-.close_dialog_x_button{
+.close_dialog_x_button {
   border-radius: 50%;
   background-color: var(--background_secondary);
   width: 32px;
@@ -150,25 +142,99 @@ dialog button{
   align-items: center;
 }
 
-.close_dialog_x_button:hover{
+.close_dialog_x_button:hover {
   background-color: var(--dialog_x_button_hover);
 }
 
-.close_dialog_x_button:active{
+.close_dialog_x_button:active {
   background-color: var(--dialog_x_button_active);
 }
 
-.close_dialog_x_button img{
+.close_dialog_x_button img {
   width: 13.15px;
   height: 13.15px;
 }
 
-dialog:focus{
+dialog:focus {
   outline: none;
 }
 
-@media (min-width: 1440px) {
-  .pictures_div_row_one {
+@media (min-width: 1441px) {
+  .picture_section {
     margin-top: 160px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header_icon {
+    width: 168px;
+    height: 32px;
+    margin-left: 0;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    height: 72px;
+  }
+
+  footer {
+    height: 103px;
+    margin-top: 160px;
+  }
+
+  footer img {
+    width: 99.96px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    margin-bottom: 40px;
+  }
+
+  footer {
+    margin-top: 56px;
+  }
+
+  .picture_section {
+    gap: 16px 16px;
+  }
+
+  dialog[open] {
+    width: 343px;
+    height: 664px;
+  }
+
+  .dialog_header {
+    width: 281px;
+    height: 69px;
+    margin-top: 32px;
+    align-items: flex-end;
+  }
+
+  dialog > img {
+    width: 300px;
+    height: 375px;
+  }
+
+  .dialog_footer {
+    margin-bottom: 32px;
+  }
+
+  .close_dialog_x_button {
+    margin-bottom: 37px;
   }
 }

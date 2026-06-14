@@ -15,29 +15,16 @@ let pictures = [
 
 let currentIndex = 0;
 
-function addfirstrow() {
-  let row_one = document.getElementById("pictures_div_row_one");
-  for (let index = 0; index < 7; index++) {
-    row_one.innerHTML += getFirstRowTemplate(index);
+function renderThumbnails() {
+  let section = document.querySelector(".picture_section");
+  for (let index = 0; index < pictures.length; index++) {
+    section.innerHTML += getThumbnailTemplate(index);
   }
 }
 
-function getFirstRowTemplate(index) {
-  return `<div class="thumbnail_div" onclick="openDialog(${index})">
+function getThumbnailTemplate(index) {
+  return `<div class="thumbnail_div" onclick="openDialog(${index})" tabindex="0">
         <img src="./assets/pictures/${pictures[index]}" alt="thumbnail" class="thumbnail_imgage"/>
-    </div>`;
-}
-
-function addsecondrow() {
-  let row_two = document.getElementById("pictures_div_row_two");
-  for (let index = 7; index < pictures.length; index++) {
-    row_two.innerHTML += getSecondRowTemplate(index);
-  }
-}
-
-function getSecondRowTemplate(index) {
-  return `<div class="thumbnail_div" onclick="openDialog(${index})">
-        <img src="./assets/pictures/${pictures[index]}" alt="thumbnail" class="thumbnail_imgage" />
     </div>`;
 }
 
@@ -93,5 +80,4 @@ function closeDialog() {
   document.getElementById("dialogID").close();
 }
 
-addfirstrow();
-addsecondrow();
+renderThumbnails();

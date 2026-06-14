@@ -39,10 +39,7 @@
     </header>
     <main>
       <h1>Your personal photo album</h1>
-      <section class="picture_section">
-        <div id="pictures_div_row_one" class="pictures_div_row_one"></div>
-        <div id="pictures_div_row_two" class="pictures_div_row_two"></div>
-      </section>
+      <section class="picture_section"></section>
     </main>
     <footer>
       <!-- Dieser Abschnitt ist nur dazu da, eine responsive Kurve zu generieren, indem beim Footer Teile durch prozentuale Koordinaten ausgeschnitten werden -->
@@ -63,10 +60,18 @@
       <img src="./assets/svg/footer_logo.svg" alt="Developer Akademie Logo" />
       <span class="footer_text">© 2023 Developer Akademie GmbH</span>
     </footer>
-    <dialog id="dialogID" onclick="dialogClickedOutside(event)">
+    <dialog
+      id="dialogID"
+      aria-labelledby="dialog_header_text_id"
+      onclick="dialogClickedOutside(event)"
+    >
       <div class="dialog_header">
         <span class="dialog_header_text" id="dialog_header_text_id">Lorem</span>
-        <button class="close_dialog_x_button" onclick="closeDialog()">
+        <button
+          class="close_dialog_x_button"
+          aria-label="Close dialog"
+          onclick="closeDialog()"
+        >
           <img src="./assets/svg/close_x_button.svg" alt="Close Button" />
         </button>
       </div>
@@ -76,13 +81,13 @@
         alt="Selected Picture"
       />
       <div class="dialog_footer">
-        <button onclick="directionLeft()">
+        <button aria-label="Previous picture" onclick="directionLeft()">
           <img src="./assets/svg/arrow-left.svg" alt="Left Arrow Icon" />
         </button>
-        <p class="dialog_footer_text">
+        <p class="dialog_footer_text" aria-live="polite">
           <span id="dialog_counter" class="dialog_footer_text">1</span>/12
         </p>
-        <button onclick="directionRight()">
+        <button aria-label="Next picture" onclick="directionRight()">
           <img src="./assets/svg/arrow-right.svg" alt="Right Arrow Icon" />
         </button>
       </div>

@@ -10,16 +10,6 @@ header {
 .header_icon {
   width: 215.19px;
   height: 41px;
-  /* Ziel: Bis 1440px bleibt der Abstand fix bei 140px. Ab 1440px wächst er linear
-     und erreicht bei 1920px genau 240px (+100px über 480px Breitenzuwachs). Darüber
-     hinaus läuft dieselbe Gerade nahtlos weiter (kein Knick, kein oberes Limit).
-
-     Eine lineare Funktion: margin = Start + (aktuelle Breite - Schwelle) * Steigung
-       max(140px, ...) = Untergrenze, fängt unterhalb 1440px das Schrumpfen ab
-       140px           = Startwert bei 1440px
-       (100vw - 1440px)= zurückgelegte Breite ab der Schwelle
-       100 / 480       = Steigung: +100px je 480px Breite (= 1/4.8)
-     Eckwerte: 1440px→140px, 1920px→240px, 2880px→440px */
   margin-left: max(140px, calc(140px + (100vw - 1440px) * 100 / 480));
 }
 
@@ -157,6 +147,35 @@ dialog button {
 
 dialog:focus {
   outline: none;
+}
+
+h1 {
+  font-family: "Figtree";
+  font-weight: 800;
+  font-size: 56px;
+  color: white;
+  text-align: center;
+}
+
+.footer_text {
+  font-family: "Figtree";
+  font-weight: 400;
+  color: var(--grey_color);
+  font-size: 14px;
+}
+
+.dialog_footer_text {
+  font-family: "Figtree";
+  font-weight: 500;
+  color: #f5f5f5;
+  font-size: 16px;
+}
+
+.dialog_header_text {
+  font-family: Figtree;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
 }
 
 @media (min-width: 1441px) {

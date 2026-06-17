@@ -6,32 +6,3 @@
     url(../assets/fonts/Figtree/Figtree-VariableFont_wght.woff2) format("woff2"),
     url(../assets/fonts/Figtree/Figtree-VariableFont_wght.woff) format("woff");
 }
-
-h1 {
-  font-family: "Figtree";
-  font-weight: 800;
-  font-size: 56px;
-  color: white;
-  text-align: center;
-}
-
-.footer_text {
-  font-family: "Figtree";
-  font-weight: 400;
-  color: var(--grey_color);
-  font-size: 14px;
-}
-
-.dialog_footer_text {
-  font-family: "Figtree";
-  font-weight: 500;
-  color: #f5f5f5;
-  font-size: 16px;
-}
-
-.dialog_header_text {
-  font-family: Figtree;
-  font-weight: 700;
-  font-size: 24px;
-  color: white;
-}

@@ -79,5 +79,3 @@ function directionRight() {
 function closeDialog() {
   document.getElementById("dialogID").close();
 }
-
-renderThumbnails();

@@ -21,7 +21,7 @@ main {
   margin: 0 auto;
   flex: 1;
   overflow: visible;
-  padding: 0 24px; /*Puffer für früheren Umbruch um Bug zu vermeiden*/
+  padding: 0 24px;
 }
 
 .picture_section {
@@ -255,5 +255,11 @@ h1 {
 
   .close_dialog_x_button {
     margin-bottom: 37px;
+  }
+}
+
+@media (max-width: 370px){
+  h1{
+    font-size: 37px;
   }
 }

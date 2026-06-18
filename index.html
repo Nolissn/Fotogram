@@ -29,7 +29,6 @@
     <title>Fotogram</title>
 
     <script src="./scripts/script.js" defer></script>
-
   </head>
   <body onload="renderThumbnails()">
     <header>
@@ -43,7 +42,7 @@
     </header>
     <main>
       <h1>Your personal photo album</h1>
-      <section class="picture_section"></section>
+      <section id="picture_section_id" class="picture_section"></section>
     </main>
     <footer>
       <!-- Dieser Abschnitt ist nur dazu da, eine responsive Kurve zu generieren, indem beim Footer Teile durch prozentuale Koordinaten ausgeschnitten werden -->
@@ -64,11 +63,7 @@
       <img src="./assets/svg/footer_logo.svg" alt="Developer Akademie Logo" />
       <span class="footer_text">© 2023 Developer Akademie GmbH</span>
     </footer>
-    <dialog
-      id="dialogID"
-      aria-labelledby="dialog_header_text_id"
-      onclick="dialogClickedOutside(event)"
-    >
+    <dialog closedby="any" id="dialogID" aria-labelledby="dialog_header_text_id">
       <div class="dialog_header">
         <span class="dialog_header_text" id="dialog_header_text_id">Lorem</span>
         <button

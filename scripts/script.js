@@ -16,7 +16,7 @@ let pictures = [
 let currentIndex = 0;
 
 function renderThumbnails() {
-  let section = document.querySelector(".picture_section");
+  let section = document.getElementById("picture_section_id");
   for (let index = 0; index < pictures.length; index++) {
     section.innerHTML += getThumbnailTemplate(index);
   }
@@ -31,18 +31,6 @@ function getThumbnailTemplate(index) {
 function openDialog(index) {
   showPicture(index);
   document.getElementById("dialogID").showModal();
-}
-
-function dialogClickedOutside(event) {
-  let rect = event.currentTarget.getBoundingClientRect();
-  let clickedInside =
-    event.clientX >= rect.left &&
-    event.clientX <= rect.right &&
-    event.clientY >= rect.top &&
-    event.clientY <= rect.bottom;
-  if (!clickedInside) {
-    closeDialog();
-  }
 }
 
 function showPicture(index) {

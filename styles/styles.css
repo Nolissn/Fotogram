@@ -33,7 +33,7 @@ main {
   margin-top: 80px;
 }
 
-.thumbnail_div {
+.thumbnail_button {
   width: 150px;
   height: 150px;
   border-radius: 16px;
@@ -41,6 +41,9 @@ main {
   border-style: solid;
   border-color: var(--thumbnail_border_color);
   overflow: hidden;
+  padding: 0;
+  background: none;
+  cursor: pointer;
 }
 
 .thumbnail_imgage {
@@ -66,7 +69,7 @@ footer img {
   height: 32px;
 }
 
-.thumbnail_div:hover {
+.thumbnail_button:hover {
   border-color: var(--thumbnail_border_color_active);
   transform: scale(1.04);
 }

@@ -23,9 +23,9 @@ function renderThumbnails() {
 }
 
 function getThumbnailTemplate(index) {
-  return `<div class="thumbnail_div" onclick="openDialog(${index})" tabindex="0">
+  return `<button class="thumbnail_button" onclick="openDialog(${index})" tabindex="0">
         <img src="./assets/pictures/${pictures[index]}" alt="thumbnail" class="thumbnail_imgage"/>
-    </div>`;
+    </button>`;
 }
 
 function openDialog(index) {

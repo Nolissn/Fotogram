@@ -25,15 +25,9 @@ Fotogram lets you browse a collection of photos as thumbnails and open them in a
 
 ## Built With
 
-<p>
-  <img src="./assets/readme_pictures/html.png" alt="HTML" width="32" align="middle" />&nbsp; HTML
-</p>
-<p>
-  <img src="./assets/readme_pictures/css.png" alt="CSS" width="32" align="middle" />&nbsp; CSS
-</p>
-<p>
-  <img src="./assets/readme_pictures/js.png" alt="JavaScript" width="32" align="middle" />&nbsp; JavaScript (Vanilla)
-</p>
+<img src="./assets/readme_pictures/html.png" alt="HTML" width="48" />
+<img src="./assets/readme_pictures/css.png" alt="CSS" width="48" />
+<img src="./assets/readme_pictures/js.png" alt="JavaScript" width="48" />
 
 ---
 

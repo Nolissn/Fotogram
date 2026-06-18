@@ -1,4 +1,4 @@
-<img src="./assets/svg/fotogram_icon.svg" alt="Fotogram Logo" width="60" />
+<img src="./assets/readme_pictures/fotogram_icon.svg" alt="Fotogram Logo" width="60" />
 
 # Fotogram
 
@@ -14,16 +14,20 @@ Fotogram lets you browse a collection of photos as thumbnails and open them in a
 
 ## Features
 
-**Thumbnail gallery** — browse photos in a clean grid layout
-**Photo dialog** — open any photo in a fullscreen-style dialog
-**Full keyboard navigation** — every interaction is reachable without a mouse
-**WCAG accessibility** — built with accessibility standards in mind
-**Responsive design** — works on all screen sizes down to about ~300px width
-**Optimized assets** — images in WebP format, fonts in WOFF2 (with WOFF as fallback)
+**Thumbnail gallery**
+**Photo dialog**
+**Full keyboard navigation**
+**WCAG accessibility**
+**Responsive design**
+**Optimized assets**
 
 ---
 
 ## Built With
+
+<img src="./assets/readme_pictures/html.png" alt="HTML" width="48" />
+<img src="./assets/readme_pictures/css.png" alt="CSS" width="48" />
+<img src="./assets/readme_pictures/js.png" alt="JavaScript" width="48" />
 
 - HTML
 - CSS
